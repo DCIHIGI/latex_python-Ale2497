@@ -1,0 +1,186 @@
+
+% ****** Start of file apssamp.tex ******
+%
+%   This file is part of the APS files in the REVTeX 4.2 distribution.
+%   Version 4.2a of REVTeX, December 2014
+%
+%   Copyright (c) 2014 The American Physical Society.
+%
+%   See the REVTeX 4 README file for restrictions and more information.
+%
+% TeX'ing this file requires that you have AMS-LaTeX 2.0 installed
+% as well as the rest of the prerequisites for REVTeX 4.2
+%
+% See the REVTeX 4 README file
+% It also requires running BibTeX. The commands are as follows:
+%
+%  1)  latex apssamp.tex
+%  2)  bibtex apssamp
+%  3)  latex apssamp.tex
+%  4)  latex apssamp.tex
+%
+\documentclass[%
+ reprint,
+%superscriptaddress,
+%groupedaddress,
+%unsortedaddress,
+%runinaddress,
+%frontmatterverbose, 
+%preprint,
+%preprintnumbers,
+%nofootinbib,
+%nobibnotes,
+%bibnotes,
+ amsmath,amssymb,
+ aps,
+%pra,
+%prb,
+%rmp,
+%prstab,
+%prstper,
+%floatfix,
+]{revtex4-2}
+
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{float}
+\graphicspath{ {images/} }
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{graphicx}% Include figure files
+\usepackage{dcolumn}% Align table columns on decimal point
+\usepackage{bm}% bold math
+\usepackage{hyperref}% add hypertext capabilities
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\providecommand{\norm}[1]{\lVert#1\rVert}
+%\usepackage[mathlines]{lineno}% Enable numbering of text and display math
+%\linenumbers\relax % Commence numbering lines
+
+%\usepackage[showframe,%Uncomment any one of the following lines to test 
+%%scale=0.7, marginratio={1:1, 2:3}, ignoreall,% default settings
+%%text={7in,10in},centering,
+%%margin=1.5in,
+%%total={6.5in,8.75in}, top=1.2in, left=0.9in, includefoot,
+%%height=10in,a5paper,hmargin={3cm,0.8in},
+%]{geometry}
+
+\begin{document}
+
+\preprint{APS/123-QED}
+
+\title{Análisis de datos con Python}% Force line breaks with \\
+
+
+
+\author{Alejandro Cimental Chávez}
+
+\affiliation{Universidad de Guanajuato\\
+                Herramientas Informaticas Y Gestión de la Información}
+
+
+
+\date{\today}% It is always \today, today,
+             %  but any date may be explicitly specified
+                              %display desired
+
+
+%\keywords{Suggested keywords}%Use showkeys class option if keyword
+\begin{abstract}
+     Con la finalidad de aprender a utilizar python y algunas de sus librerias, se desarrollara un análisis  de dos bases de datos. La primera será una base de datos proporcionada por el INE para predecir la cantidad de casillas necesarias en las próximas votaciones del país. Además el alumno podrá escoger una base de datos de su elección para realizar el análisis correspondiente y obtener resultados de interez.
+\end{abstract}
+
+
+\maketitle
+
+\section{INTRODUCCION}
+
+\subsection{Instituto Nacional Electoral}
+
+El INE es uno de los órganos constitucionales autónomos de México, siendo este el encargado de regular los procesos electorales de todo el país.
+De igual forma el INE parte de otros procesos de participación ciudadana como consultas populares, además de ser la entidad que emite las credenciales para votar a través del registro federal de electores.\cite{wiki}
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.3]{ine.jpg}
+    \caption{Instituto Nacional Electoral logo}
+    \label{fig:my_label}
+\end{figure}
+
+
+
+
+\subsection{Obtencion de datos electorales y análisis }
+A través del portal electrónico del INE se hizo uso de los datos abiertos del padrón electoral desde el mes de junio del año 2019 hasta diciembre del 2020 para realizar una predicción del padrón electoral para el mes de febrero del 2021 y así poder asignar la cantidad de casillas electorales que se tendría que emplear en las elecciones que se llevaran a cabo en el mes de Junio del 2021.
+Esta vez se utilizó Python y especificamente su librería pandas como herramienta de análisis de datos. Desde 2008 pandas ha sido una librería que ayuda al análisis y manipulación de datos ofreciendo al usuario  estructuras de datos y operaciones  para manipular tablas númericas  y series de datos.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.5]{pandas.png}
+    \caption{Librería de software pandas}
+    \label{fig:my_label}
+\end{figure}
+ A difrerencia de excel, Python ofrece la ventaja de poder trabajar con grandes bases de datos sin sufrir una demora considerable en sus operaciones. Con una simple linea de código es posible obtener precisamente los datos que se estan buscando, acomodarlos en cierto orden, realizar operaciones matemáticas y mucho más. Si bien es cierto que se requiere un poco más de conocimiento para utilizarlo, para el usario adecuado que busca analizar una gran base de datos es la herramienta ideal para el trabajo.
+ 
+\subsection{Base de datos de elección personal}
+Para el segundo proyecto de análisis de datos utilice una base de datos de tiendas departamentales en Estados Unidos donde se muestran los envíos, productos, clientes, ganancias, ventas, categoría de productos, etc.
+Se hizo un análisis de ventas en varias categorías para poder obtener información que pudiera veneficiar a la cadena de tiendas de alguna manera. 
+Se pudo obtener en que estados las ventas eran mayores, que categoria era la que generaba más ganancias a la empresa al igual que los productos más vendidos. 
+Con estos datos la empresa podria tomar decisiones que mejoren las ganancias y talvez dirigirse a un mercado más específico y tratar de evitar perdidas con las categorias que su demanda es menor.
+
+
+
+\section{Resultados}
+En la siguiente grafica podemos apreciar que de los años de venta en la lista, el 2014 fue el mejor superando los $ \$700000$ dolares.
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.6]{bar.png}
+    \caption{Ventas por año}
+    \label{fig:my_label}
+\end{figure}
+En el gráfico circular se puede ver el porcentaje de ventas por cada categoria. En general los articulos de oficina son mucho más baratos que un mueble o un equipo de computo lo que podria explicar porque los pedidos en esa categoria son mucho mayores.
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{quantity_ordered.png}
+    \caption{Porcentaje de compras por categoria}
+    \label{fig:my_label}
+\end{figure}
+Aún cuando la gran mayoria de pedidos son en el área de oficina, la mayor ganancia la genera la categoria de tecnología. Como ya se comentaba esto tiene que ver con los precios promedio de los artículos en cada una de las categorias.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{top_sales2.png}
+    \caption{Porcentaje de ganacias por categoria}
+    \label{fig:my_label}
+\end{figure}
+El análisis también nos permite conocer cuál estado fue en la que se vendio más. Como era de esperarce, las ventas fueron superiores en los estados con una mayor población o una ciudad mayor como lo son Los Angeles, Manhattan o Dallas.
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{cities.png}
+    \caption{Porcentaje de ganacias por categoria}
+    \label{fig:my_label}
+\end{figure}
+
+\section{CONCLUSIONES}
+Las graficas presentadas con anterioridad son solo algunas del total de graficas obtenidas con el análisis de datos realizado. Estos datos podrían permitir a la empresa tomar decisiones como en que mes deberían tener mas inventario, que clase de productos deberían invertir en comprar y almacenar o tal vez que clase de productos deberían dejar de vendar ya que la demanda es poca y representan capital estancado.
+Por otro lado el análisis de datos es una practica necesaria en cualquier ámbito ya que arroja señales o guías de hacia donde se debería dirigir la operación para su mejoría.
+
+
+
+
+\begin{thebibliography}{}
+
+\bibitem{wiki}
+WIKIPEDIA \textit{Instituto Nacional Electoral}. Fecha de consulta: Marzo, 2021. Obtenido desde: \texttt{https://en.wikipedia.org/wiki/Instituto_Nacional_Electoral}\\
+
+\bibitem{pie}
+GeeksforGeeks \textit{Plot a pie chart in Python using Matplotlib}. Fecha de consulta: Junio, 2021. Obtenido desde: \texttt{https://www.geeksforgeeks.org/plot-a-pie-chart-in-python-using-matplotlib/}\\
+
+
+\bibitem{watch}
+YOUTUBE \textit{Complete Python Pandas Data Science Tutorial}. Fecha de consulta: Junio, 2021. Obtenido desde: \texttt{https://www.youtube.com/watch?v=vmEHCJofslg}\\
+
+
+\end{thebibliography}
+\end{document}
